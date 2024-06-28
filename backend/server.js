@@ -20,7 +20,8 @@ const users = {
     name: "Admin User",
     username: "admin",
     email: "admin@flanks.com",
-    password: "$2b$12$JgDkLTJ1NrBPixs6gidyZegOiPnXgMO.GUJPOZFW8afHyUWgBOfWy"
+    password: "$2b$12$JgDkLTJ1NrBPixs6gidyZegOiPnXgMO.GUJPOZFW8afHyUWgBOfWy",
+    image: "https://media.licdn.com/dms/image/D4D03AQFhDb_gX8eOAQ/profile-displayphoto-shrink_800_800/0/1667155391357?e=1724889600&v=beta&t=DyipEaJgtzH9jcKbQb5y9e16ax6sqXvlN2ZJONd5jk4"
   },
 };
 
@@ -58,7 +59,8 @@ fastify.get('/api/user', async (request, reply) => {
       id: user.id,
       name: user.name,
       username: user.username,
-      email: user.email
+      email: user.email,
+      image: user.image
     });
 
   } catch (error) {

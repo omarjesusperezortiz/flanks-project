@@ -46,14 +46,13 @@ const sidebarItems = ref<SidebarItem[]>([
         icon: 'mdi-table',
         // badge: '3',
     },
-    {
-        name: 'Reports',
-        href: '/reports',
-        icon: 'mdi-file-chart',
-    }
+    // {
+    //     name: 'Reports',
+    //     href: '/reports',
+    //     icon: 'mdi-file-chart',
+    // }
 ])
 </script>
 
 <style scoped>
-/* Add any styles if needed */
 </style>

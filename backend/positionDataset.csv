@@ -1,4 +1,4 @@
-id,accrued_interest,number_of_shares,balance,capital_gain,cost,currency,entity,expiration_date,initial_date,interest.rate,is_nominal,isin,market,name,portfolio_id,type,valuation_date,rate_to_euro
+id,accrued_interest,number_of_shares,balance,capital_gain,cost,currency,entity,expiration_date,initial_date,interest_rate,is_nominal,isin,market,name,portfolio_id,type,valuation_date,rate_to_euro
 0902ed6b03bb286b16b15f840115b19fbe32d43a6452fb007648dcf33185a9b5,-0.0021,100.0,99790.0,-210.0,100000.0,EUR,rothschildmartinmaurel,,,,False,XS2471187562,,BBVA PH SX5E 4279 MAR23-28 NC1YS,3e8a5c72cd6cb54db05bd33f945448b5db38f9adededbe157d48fb51fe84f539,FI,2023-09-20,1.0
 af52208035379886e6a833365d2b4cdaa08f515b0dd5bdd8ea261a08a0a2bc4e,0.2048,37.0,45069.7,7662.4,37407296,EUR,rothschildmartinmaurel,,,,False,XS2387239069,,BNP CERT ACTIONS PRICING POWER,3e8a5c72cd6cb54db05bd33f945448b5db38f9adededbe157d48fb51fe84f539,FI,2023-09-19,1.0
 2a59889cfd792f64ebc25e4b72db951b1538b423d173593dd41fac35abd00104,0.0849,0.0,0.0,5943.0,0.0,EUR,rothschildmartinmaurel,,,,False,XS2345450436,,BARC AC SPX 4411 FEB22-24 NC6M Q,3e8a5c72cd6cb54db05bd33f945448b5db38f9adededbe157d48fb51fe84f539,FI,,1.0

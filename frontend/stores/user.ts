@@ -26,10 +26,6 @@ export const useUserStore = defineStore('user', () => {
     const signIn = async (data: Login) => {
         const { login } = useAuthApi()
         try {
-            // const res = await $fetch<{token: string }>('http://localhost:4000/api/login', {
-            //     method: 'POST',
-            //     body: data
-            // })
             const res = await login(data)
             setToken(res.token)
             await fetchUserInfo()
@@ -37,6 +33,7 @@ export const useUserStore = defineStore('user', () => {
             setToken(null)
             setUser(null)
             console.error('Login error:', error)
+            throw new Error('Login failed. Please check your email and password.');
         }
     }
 

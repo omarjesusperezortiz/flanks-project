@@ -19,20 +19,19 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                        <input id="remember" type="checkbox" v-model="formData.remember"
-                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" />
-                    </div>
-                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
-                        me</label>
                 </div>
-                <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                <a href="https://www.flanks.io/contact"
+                    class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
             </div>
             <button type="submit"
                 class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
                 to your account</button>
+            <div v-if="errorMessage" class="text-red-500 text-sm">
+                {{ errorMessage }}
+            </div>
             <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                Not registered? <a href="https://www.flanks.io/contact"
+                    class="text-blue-700 hover:underline dark:text-blue-500">Contact Flanks.io</a>
             </div>
         </form>
     </div>
@@ -42,24 +41,29 @@
 import { ref } from 'vue';
 import { useUserStore } from '~/stores/user';
 
-definePageMeta({ 
+definePageMeta({
     layout: 'auth',
     middleware: ['already-auth']
 });
 
 const formData = ref({
     email: '',
-    password: '',
-    remember: false
+    password: ''
 });
+
+const errorMessage = ref('')
 
 const userStore = useUserStore()
 
 const submitForm = async () => {
-    await userStore.signIn({
-        username: formData.value.email,
-        password: formData.value.password
-    })
-    await navigateTo('/', { replace: false })
+    try {
+        await userStore.signIn({
+            username: formData.value.email,
+            password: formData.value.password
+        });
+        await navigateTo('/', { replace: false });
+    } catch (error) {
+        errorMessage.value = 'Login failed. Please check your email and password.';
     }
+}
 </script>

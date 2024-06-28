@@ -62,8 +62,15 @@
 
 <script setup lang="ts">
 import 'vue-good-table-next/dist/vue-good-table-next.css';
+import type { Position } from "~/types";
 
-const { data: positions, error } = await useFetch('http://localhost:4000/api/positions');
+const { getAll } = usePositionsApi()
+const positions = ref<Position[] | null>(null)
+const error = ref(false)
+positions.value = await getAll()
+if (positions.value === null) {
+    error.value = true
+}
 const router = useRouter();
 
 const theme = computed(() => useColorMode().value == 'dark' ? 'nocturnal' : 'default');
@@ -91,7 +98,7 @@ const filters = ref({
   rate_to_euro: ''
 });
 
-const getUniqueValues = (field) => {
+const getUniqueValues = (field : any) => {
   const values = positions.value ? [...new Set(positions.value.map(pos => pos[field]))] : [];
   return values.sort();
 };

@@ -23,16 +23,17 @@
 </template>
 
 <script setup lang="ts">
+import type { Position } from '~/types';
+
 const route = useRoute()
 const { id } = route.params
 
-const { data: position } = await useFetch('http://localhost:4000/api/positions', {
-    transform: (response) => {
-        return response.find((p) => p.id === id)
-    }
-})
+const { getById } = usePositionsApi() 
+const position = ref<Position | null>(null)
 
-const formatKey = (key) => {
-    return key.split('_').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+position.value = await getById(id)
+
+const formatKey = (key : any) => {
+    return key.split('_').map((word : any) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 }
 </script>
