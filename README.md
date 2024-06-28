@@ -46,3 +46,10 @@ Frontend will run in
 ````
 http://localhost:3000/
 ````
+
+# Preview
+
+<h2 align="center">
+<img width="600px" src="https://raw.githubusercontent.com/omarjesusperezortiz/flanks-project/main/misc/preview.png" alt="preview">
+</h2>
+
