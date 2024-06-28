@@ -1,0 +1,32 @@
+# Ignore node_modules folders in backend and frontend
+backend/node_modules
+frontend/node_modules
+
+# Ignore environment variable files in root, backend, and frontend directories
+.env
+backend/.env
+frontend/.env
+
+# Ignore package-lock.json files in backend and frontend
+backend/package-lock.json
+frontend/package-lock.json
+
+# Ignore Nuxt.js build and generated files
+frontend/.nuxt
+frontend/.output
+frontend/dist
+frontend/node_modules
+
+# Ignore other potential Nuxt.js related files
+frontend/.nuxt-ignore
+frontend/.nuxt-build-optimization
+frontend/.nuxt-ssr
+
+# Ignore editor and OS files
+*.swp
+*.log
+*.DS_Store
+*.sublime-project
+*.sublime-workspace
+.vscode
+.idea
