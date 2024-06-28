@@ -6,36 +6,43 @@
 - Compositions API with typescript
 - Backend NodeJs Fastify
 - Run Proyect with Docker Compose
-- Backend Run in Port 3000
-- Front end in Port 8080
+- Backend Run in Port 4000
+- Front end in Port 3000
 
 
 # Folder Structure
 
 ````
-/financial-advisor-dashboard
+/flanks-proyect
 |-- /frontend                    # Frontend source files
 |   |-- /assets                  # Static files like images and fonts
 |   |-- /components              # Vue components
+|   |-- /composables             # Vue composables
 |   |-- /layouts                 # Nuxt layouts
 |   |-- /pages                   # Nuxt pages
 |   |-- /plugins                 # Vue plugins
-|   |-- /store                   # Vuex store files
+|   |-- /stores                  # Vuex store files
 |   |-- nuxt.config.js           # Nuxt configuration file
 |-- /backend                     # Backend source files
-|   |-- /config                  # Configuration files for the server, db, etc.
-|   |-- /controllers             # Controllers handle the business logic
-|   |-- /models                  # Database models
-|   |-- /routes                  # API routes
-|   |-- /services                # Business logic
-|   |-- /utils                   # Utility functions
-|   |-- server.js                # Entry point for the Fastify server
-|-- /docker                      # Docker related files
-|   |-- Dockerfile-frontend      # Dockerfile for the frontend
-|   |-- Dockerfile-backend       # Dockerfile for the backend
-|   |-- docker-compose.yml       # Docker-compose file to orchestrate services
-|-- /tests                       # Test cases for both frontend and backend
+|   |-- server.js                # Basic entry point for the Fastify server
+|-- docker-compose.yml           # Docker-compose file to orchestrate services
 |-- .gitignore                   # Specifies intentionally untracked files to ignore
 |-- README.md                    # README for the project overview
 ````
 
+# Steps to Initialize
+
+Run command in root folder
+`````
+docker-compose up --build -d
+``````
+
+Backend will run in
+````
+http://localhost:4000/
+````
+
+Frontend will run in
+````
+http://localhost:3000/
+````
