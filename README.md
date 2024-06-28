@@ -47,6 +47,16 @@ Frontend will run in
 http://localhost:3000/
 ````
 
+Test user is
+````
+admin
+````
+
+Password is
+````
+password
+````
+
 # Preview
 
 <h2 align="center">
